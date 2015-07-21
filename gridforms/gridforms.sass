@@ -47,7 +47,7 @@
 =_reset
 
 
-=grid-form($max-columns: 12, $font-size-large: 13px, $legend-color: lighten(#333, 5%), $field-padding: 8px, $label-font-size: 10px, $grid-border-color: #333, $label-color: #333, $field-focus-color: darken(#FFFDED, 5%))
+=grid-form($max-columns: 24, $font-size-large: 13px, $legend-color: lighten(#333, 5%), $field-padding: 8px, $label-font-size: 10px, $grid-border-color: #333, $label-color: #333, $field-focus-color: darken(#FFFDED, 5%))
 
     // Sacrifice compatibility with IE7 and below to use the border-box model
     *, *:before, *:after
@@ -64,7 +64,8 @@
         width: 100%
     // Remove backgrounds and borders from fields
     input[type="text"], input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"], textarea
-        border: 0
+        border: 1px solid #d5d5d5!important
+        height: 28px!important
         background: transparent!important
         +_placeholder
             font-weight: 100
@@ -95,13 +96,18 @@
     [data-row-span]
         border-bottom: 1px solid $grid-border-color
         width: 100%
+        background-color: #ffffff
+        border: none
         +_clear
         +_breakpoints(0, 700px)
             border-bottom: none
         [data-field-span]
             word-wrap: break-word
-            padding: $field-padding
             float: left
+            height: 60px
+            padding: 5px
+            border: 1px solid rgba(0, 0, 0, 0.14)
+
             +_breakpoints(0, 700px)
                 border-bottom: 1px solid $grid-border-color
                 width: 100% !important
@@ -111,9 +117,9 @@
             label:first-child
                 margin-top: 0
                 text-transform: uppercase
-                letter-spacing: 1px
                 font-size: $label-font-size
-                color: $label-color
+                color: rgba(0, 0, 0, 0.54)
+                letter-spacing: 0px
                 display: block
                 margin-bottom: 4px
                 &:hover
